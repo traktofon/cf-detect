@@ -1,0 +1,24 @@
+{
+    "manifest_version": 2,
+    "name": "Detect Cloudflare",
+    "description": "Adds an icon to the toolbar which indicates whether the current page uses Cloudflare. If it does, the icon changes color. Detection is performed by analyzing the response headers of all requests.",
+    "version": "0.1",
+    "icons": {
+        "48": "icons/cloud48.png",
+        "96": "icons/cloud96.png"
+    },
+    "permissions": [
+        "webRequest", "<all_urls>"
+    ],
+    "background": {
+        "scripts": [ "background.js" ]
+    },
+    "browser_action": {
+        "browser_style": true,
+        "default_title": "Indicates whether this page uses Cloudflare",
+        "default_icon": {
+            "48": "icons/cloud48.png",
+            "96": "icons/cloud96.png"
+        }
+    }
+}
