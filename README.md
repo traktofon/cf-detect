@@ -10,6 +10,19 @@ worried that they are affected by the
 [cloudbleed bug](https://bugs.chromium.org/p/project-zero/issues/detail?id=1139).
 
 
+Installation
+------------
+
+The extension has been submitted to [addons.mozilla.org](https://addons.mozilla.org/en-US/firefox/addon/detect-cloudflare/)
+but is currently queued for review. Apparently, current versions of Firefox will not allow the extension to be installed
+until it has been reviewed. But you can install it manually:
+
+* Clone or download this repository.
+* In Firefox, go to [about:debugging](about:debugging).
+* Click "Load Temporary Add-on" and navigate to the file "manifest.json". Double-click/open it.
+* This will only load the add-on for the current Firefox session!
+
+
 Warning
 -------
 
