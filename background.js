@@ -7,10 +7,9 @@ function cfdetect( details ) {
     var cf = false;
     for (var i=0; i<headers.length; i++) {
         var h = headers[i];
-        if (h.name === "CF-RAY") {
-            cf = true;
-            break;
-        } else if (h.name === "Server" && h.value === "cloudflare-nginx") {
+        var hname = h.name.toLowerCase();
+        if ((hname === "cf-ray") ||
+            (hname === "server" && h.value === "cloudflare-nginx")) {
             cf = true;
             break;
         }
