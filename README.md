@@ -13,9 +13,10 @@ worried that they are affected by the
 Installation
 ------------
 
-The extension has been submitted to [addons.mozilla.org](https://addons.mozilla.org/en-US/firefox/addon/detect-cloudflare/)
-but is currently queued for review. Apparently, current versions of Firefox will not allow the extension to be installed
-until it has been reviewed. But you can install it manually:
+The extension is available on [addons.mozilla.org](https://addons.mozilla.org/en-US/firefox/addon/detect-cloudflare/).
+
+However, newest versions might appear there with some delay (though this should be less than one day),
+so the impatient can install the extension from source manually:
 
 * Clone or download this repository.
 * In Firefox, go to [about:debugging](about:debugging).
