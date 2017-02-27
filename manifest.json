@@ -9,7 +9,9 @@
         "96": "icons/cloud96.png"
     },
     "permissions": [
-        "webRequest", "<all_urls>"
+        "webRequest",
+        "tabs",
+        "<all_urls>"
     ],
     "background": {
         "scripts": [ "background.js" ]

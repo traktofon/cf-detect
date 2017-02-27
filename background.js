@@ -31,10 +31,28 @@ function cfdetect( details ) {
     }
 }
 
+function handleTabUpdate( tabId, changeInfo, tabInfo ) {
+    if ("url" in changeInfo) {
+        browser.browserAction.setTitle({
+            tabId: tabId,
+            title: "Indicates whether this page uses Cloudflare"
+        });
+        browser.browserAction.setIcon({
+            tabId: tabId,
+            path: {
+                48: "icons/cloud48.png",
+                96: "icons/cloud96.png"
+            }
+        });
+    }
+}
+
 browser.webRequest.onHeadersReceived.addListener(
     cfdetect,
     { urls: [ "<all_urls>" ] },
     [ "responseHeaders" ]
 );
+
+browser.tabs.onUpdated.addListener( handleTabUpdate );
 
 // vim: set expandtab ts=4 sw=4 :
