@@ -3,7 +3,7 @@
     "name": "Detect Cloudflare",
     "homepage_url": "https://github.com/traktofon/cf-detect",
     "description": "Adds an icon to the toolbar which indicates whether the current page uses Cloudflare. If it does, the icon changes color. Detection is performed by analyzing the response headers of all requests.",
-    "version": "0.2",
+    "version": "0.3",
     "icons": {
         "48": "icons/cloud48.png",
         "96": "icons/cloud96.png"
