@@ -27,6 +27,7 @@ so the impatient can install the extension from source manually:
 Warning
 -------
 
+* Currently a positive detection will happen if **any** request for the page is served by Cloudflare, including requests to 3rd party domains (e.g. for images or scripts). Whether these cases are false positives or not depends on the paranoia level of the user.
 * This extension analyzes **all** requests made by the browser, which may impact performance.
 * This is my first WebExtension, and also my first JavaScript project. Use at your own risk!
 
@@ -35,6 +36,7 @@ TODO
 ----
 
 * Make better icons.
-* Count number of requests served by Cloudflare, and show it as a badge on the icon.
+* Count number of requests served by Cloudflare, and show it as a badge on the icon, or after clicking on it.
+* Count requests by domain. Use other (yellow?) icon if only 3rd party domains are affected.
 * Analyze performance impact.
 
