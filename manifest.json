@@ -3,13 +3,15 @@
     "name": "Detect Cloudflare",
     "homepage_url": "https://github.com/traktofon/cf-detect",
     "description": "Adds an icon to the toolbar which indicates whether the current page uses Cloudflare. If it does, the icon changes color. Detection is performed by analyzing the response headers of all requests.",
-    "version": "0.3",
+    "version": "0.5",
     "icons": {
-        "48": "icons/cloud48.png",
-        "96": "icons/cloud96.png"
+        "16": "icons/cf-grey-16.png",
+        "32": "icons/cf-grey-32.png",
+        "64": "icons/cf-grey-64.png"
     },
     "permissions": [
         "webRequest",
+        "webNavigation",
         "tabs",
         "<all_urls>"
     ],
@@ -20,8 +22,10 @@
         "browser_style": true,
         "default_title": "Indicates whether this page uses Cloudflare",
         "default_icon": {
-            "48": "icons/cloud48.png",
-            "96": "icons/cloud96.png"
-        }
+            "16": "icons/cf-grey-16.png",
+            "32": "icons/cf-grey-32.png",
+            "64": "icons/cf-grey-64.png"
+        },
+        "default_popup": "popup.html"
     }
 }
