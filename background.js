@@ -54,12 +54,13 @@ function onError(e) {
     console.log(`CF-Detect-Background: ${e}`);
 }
 
-function getDomainFromURL( url ) {
-    var match = url.match( /^(\w+):\/\/([^\/]*)\/(.*)$/ );
-    if (match)
-        return match[2];
-    else
+function getDomainFromURL( urltxt ) {
+    try {
+        var url = new URL(urltxt);
+        return url.hostname;
+    } catch(err) {
         return null;
+    }
 }
 
 function updateStatus( tabId ) {
