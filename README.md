@@ -43,7 +43,6 @@ on the result of this analysis, the icon changes color:
 ![red](icons/cf-red-32.png) The page itself was served by Cloudflare.
 
 Clicking on the icon will show a popup with detailed information about the Cloudflare-using domains.
-(currently broken in private mode)
 
 
 Warning
@@ -56,6 +55,5 @@ Warning
 TODO
 ----
 
-* Make the popup work in private mode.
 * Analyze performance impact.
 
