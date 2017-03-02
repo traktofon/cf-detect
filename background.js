@@ -23,6 +23,12 @@ function Counter() {
     };
 }
 
+function mapToObject( map ) {
+    obj = {};
+    map.forEach( function(val,key) { obj[key]=val; } );
+    return obj;
+}
+
 function CFInfo() {
     this.domainCounter = new Counter();
     this.result = 0;
@@ -44,11 +50,6 @@ function CFInfoByTab() {
 }
 
 var cfInfo = new CFInfoByTab();
-
-// called by popup script
-function getCFInfo(tabId) {
-    return cfInfo.getInfo(tabId);
-}
 
 function onError(e) {
     console.log(`CF-Detect-Background: ${e}`);
@@ -147,6 +148,23 @@ function handleTabReplace( newId, oldId ) {
     cfInfo.delInfo(oldId);
 }
 
+// triggered by popup script
+function handleConnect(port) {
+    port.onMessage.addListener( function(tabId) {
+        var info = cfInfo.getInfo(tabId);
+        var msg;
+        if (info) {
+            msg = {
+                result: info.result,
+                counts: mapToObject(info.domainCounter.counts)
+            };
+        } else {
+            msg = null;
+        }
+        port.postMessage(msg);
+    });
+}
+
 browser.webRequest.onHeadersReceived.addListener(
     cfdetect,
     { urls: [ "<all_urls>" ] },
@@ -158,5 +176,7 @@ browser.webNavigation.onBeforeNavigate.addListener( handleBeforeNavigate );
 browser.tabs.onUpdated.addListener( handleTabUpdate );
 browser.tabs.onRemoved.addListener( handleTabClose );
 browser.tabs.onReplaced.addListener( handleTabReplace );
+
+browser.runtime.onConnect.addListener( handleConnect );
 
 // vim: set expandtab ts=4 sw=4 :
