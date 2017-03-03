@@ -29,7 +29,7 @@ getTab.then( function( tabs ) {
 
 function writeStatus( st ) {
     var p = document.getElementById("status");
-    p.innerHTML = statusText[st];
+    p.textContent = statusText[st];
 }
 
 function populatePopup( domainCounts ) {
@@ -44,7 +44,7 @@ function populatePopup( domainCounts ) {
         var text = document.createTextNode(`${domain}: `);
         var span = document.createElement("span");
         span.setAttribute("class", "count");
-        span.innerHTML = `${count}`;
+        span.textContent = `${count}`;
         li.appendChild(text);
         li.appendChild(span);
         ul.appendChild(li);
