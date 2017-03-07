@@ -45,15 +45,16 @@ on the result of this analysis, the icon changes color:
 Clicking on the icon will show a popup with detailed information about the Cloudflare-using domains.
 
 
-Warning
--------
+Notes
+-----
 
-* This extension analyzes **all** requests made by the browser, which may impact performance.
+* This extension analyzes **all** requests made by the browser, though other extensions (e.g. adblockers) may block some requests before they are made.
+* When navigating forward/backward inside a tab, the detection status will reset to neutral. To get the correct status, the page needs to be reloaded. (Though nowadays the reload happens automatically for many webpages.)
 * This is my first WebExtension, and also my first JavaScript project. Use at your own risk!
 
 
 TODO
 ----
 
-* Analyze performance impact.
+* Analyze performance impact. So far all test show negligible impact.
 
