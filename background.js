@@ -131,7 +131,10 @@ function cfdetect( details ) {
 }
 
 function handleBeforeNavigate( details ) {
-    if (details.frameId == 0) cfInfo.delInfo( details.tabId );
+    if (details.frameId == 0) {
+        cfInfo.delInfo( details.tabId );
+        updateStatus( details.tabId );
+    }
 }
 
 function handleTabUpdate( tabId, changeInfo, tabInfo ) {
