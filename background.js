@@ -168,7 +168,7 @@ function handleConnect(port) {
     });
 }
 
-browser.webRequest.onHeadersReceived.addListener(
+browser.webRequest.onResponseStarted.addListener(
     cfdetect,
     { urls: [ "<all_urls>" ] },
     [ "responseHeaders" ]
