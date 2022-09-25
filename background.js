@@ -114,7 +114,7 @@ function cfdetect( details ) {
         var h = headers[i];
         var hname = h.name.toLowerCase();
         if ((hname === "cf-ray") ||
-            (hname === "server" && h.value === "cloudflare-nginx")) {
+            (hname === "server" && h.value === "cloudflare")) {
             cf = true;
             break;
         }
